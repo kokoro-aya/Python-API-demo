@@ -1,5 +1,20 @@
 #!/usr/bin/env python
 
+# dog_breed.py
+# 
+# Copyleft (c) 2023 . Created by kokoro_aya on 22/12/2023.
+# 
+# This program is free software and unlicensed.
+# 
+# Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in 
+# source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any
+# means.
+# 
+# No liability or warranty is provided with this work.
+#
+# By using this work, you acknowledge that kokoro_aya has created this software.
+# 
+
 from typing import Final, List
 import random
 import urllib.request
@@ -42,6 +57,7 @@ def get_a_single_image(breed_name: str, img_no: int):
         else:
             raise NotImplementedError("Other error codes not implemented yet")
 
+
 def download_image(breed_name: str, filename: str, img_no: int = None):
     # the download of image should be reworked, currently the img_no argument is simply ignored
     backend_name = breed_name.lower()
@@ -50,6 +66,7 @@ def download_image(breed_name: str, filename: str, img_no: int = None):
         print("There is no such breed in the database, skipping ...")
     else:
         __save_to_local_file(img_url, filename)
+
 
 if __name__ == '__main__':
     arg_parser = argparse.ArgumentParser(
